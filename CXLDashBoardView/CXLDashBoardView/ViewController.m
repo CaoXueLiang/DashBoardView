@@ -27,7 +27,7 @@
 #pragma mark - Setter && Getter
 - (CXLDashBoardView *)boardView{
     if (!_boardView) {
-        _boardView = [[CXLDashBoardView alloc]initWithFrame:CGRectMake(0, 0, 250, 250)];
+        _boardView = [[CXLDashBoardView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
     }
     return _boardView;
 }
