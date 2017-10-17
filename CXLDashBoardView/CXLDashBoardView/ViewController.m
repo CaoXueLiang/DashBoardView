@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (nonatomic,strong) CXLDashBoardView *boardView;
+@property (nonatomic,strong) UISlider *slider;
 @end
 
 @implementation ViewController
@@ -22,6 +23,14 @@
     
     [self.view addSubview:self.boardView];
     self.boardView.center = self.view.center;
+    [self.boardView setProgress:0.5];
+    [self.view addSubview:self.slider];
+    self.slider.center = CGPointMake(self.view.center.x, CGRectGetHeight(self.view.bounds) - 100);
+}
+
+#pragma mark - Event Response
+- (void)sliderChanged:(UISlider *)slider{
+    [self.boardView setProgress:slider.value];
 }
 
 #pragma mark - Setter && Getter
@@ -32,4 +41,14 @@
     return _boardView;
 }
 
+- (UISlider *)slider{
+    if (!_slider) {
+        _slider = [[UISlider alloc]initWithFrame:CGRectMake(0, 0, 250, 40)];
+        [_slider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
+        _slider.minimumValue = 0;
+        _slider.maximumValue = 1;
+        _slider.value = 0.5;
+    }
+    return _slider;
+}
 @end

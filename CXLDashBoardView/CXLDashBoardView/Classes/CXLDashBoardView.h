@@ -10,4 +10,9 @@
 
 @interface CXLDashBoardView : UIView
 
+/**
+ 设置进度条的值
+ @param progress 进度
+ */
+- (void)setProgress:(CGFloat)progress;
 @end
