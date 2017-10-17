@@ -1,2 +1,2 @@
 # DashBoardView
-芝麻引用仪表盘View
+芝麻信用仪表盘View
